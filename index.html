@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Chialin Sham – Resume</title>
+<meta name="description" content="Chialin Sham: analytics, campaign operations, and workflow automation at Sharecare.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,600&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #F4F6F7;
+    --paper: #FFFFFF;
+    --ink: #1C2733;
+    --muted: #5B6876;
+    --accent: #0F6E74;
+    --rule: #D3DADF;
+    --serif: "Newsreader", Georgia, "Times New Roman", serif;
+    --sans: "Public Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #12181F; --paper: #19212A; --ink: #E6EBEF; --muted: #9AA7B3; --accent: #5CC2C6; --rule: #2E3943;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #12181F; --paper: #19212A; --ink: #E6EBEF; --muted: #9AA7B3; --accent: #5CC2C6; --rule: #2E3943;
+  }
+  *, *::before, *::after { box-sizing: inherit; }
+  html { scroll-padding-top: env(safe-area-inset-top, 0px); }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font: 400 1rem/1.6 var(--sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent); text-underline-offset: 3px; }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+
+  .page {
+    max-width: 68rem; margin: 0 auto; padding: 3.5rem 1.5rem 4rem;
+    display: grid; grid-template-columns: minmax(0, 1fr) 17rem; gap: 3.5rem;
+  }
+
+  header { grid-column: 1 / -1; border-bottom: 1px solid var(--rule); padding-bottom: 2rem; }
+  h1 {
+    font: 400 clamp(2.6rem, 7vw, 4.5rem)/1 var(--serif);
+    letter-spacing: -0.02em; margin: 0 0 0.75rem;
+  }
+  .tagline { font: 400 1.25rem/1.4 var(--serif); color: var(--muted); margin: 0 0 1.25rem; max-width: 40rem; }
+  .contact { display: flex; flex-wrap: wrap; gap: 0.5rem 1.75rem; margin: 0; padding: 0; list-style: none; font-size: 0.95rem; }
+  .contact a { color: var(--ink); text-decoration-color: var(--rule); }
+  .contact a:hover { text-decoration-color: var(--accent); }
+
+  h2 { font: 600 1.35rem/1.2 var(--serif); margin: 0 0 1.5rem; }
+
+  /* Career timeline: the one bold element */
+  .timeline { list-style: none; margin: 0; padding: 0; position: relative; }
+  .timeline::before {
+    content: ""; position: absolute; left: 5.25rem; top: 0.5rem; bottom: 0.5rem;
+    width: 2px; background: var(--rule);
+  }
+  .role { display: grid; grid-template-columns: 4.5rem minmax(0, 1fr); gap: 0 1.75rem; padding-bottom: 2.5rem; position: relative; }
+  .role::before {
+    content: ""; position: absolute; left: calc(5.25rem - 5px); top: 0.45rem;
+    width: 12px; height: 12px; border-radius: 50%;
+    background: var(--paper); border: 2px solid var(--accent);
+  }
+  .role.current::before { background: var(--accent); }
+  .years { font-size: 0.85rem; font-weight: 500; color: var(--muted); text-align: right; line-height: 1.4; padding-top: 0.15rem; font-variant-numeric: tabular-nums; }
+  .years span { display: block; }
+  .role-body { padding-left: 0.5rem; }
+  h3 { font: 600 1.15rem/1.3 var(--sans); margin: 0; }
+  .company { color: var(--accent); font-weight: 500; margin: 0.15rem 0 0.75rem; }
+  .role ul { margin: 0; padding-left: 1.1rem; }
+  .role li { margin-bottom: 0.45rem; max-width: 46rem; }
+  .role li::marker { color: var(--muted); }
+  .group-label { font-weight: 600; font-size: 0.95rem; margin: 1.25rem 0 0.5rem; }
+  .group-label:first-of-type { margin-top: 0.25rem; }
+
+  aside { display: flex; flex-direction: column; gap: 2.25rem; }
+  .panel h2 { font-size: 1.15rem; margin-bottom: 0.75rem; }
+  .panel dl { margin: 0; }
+  .panel dt { font-weight: 600; font-size: 0.9rem; margin-top: 0.9rem; }
+  .panel dt:first-child { margin-top: 0; }
+  .panel dd { margin: 0.2rem 0 0; color: var(--muted); font-size: 0.95rem; }
+  .panel p { margin: 0; }
+  .panel .sub { color: var(--muted); font-size: 0.95rem; }
+  .download {
+    display: inline-block; padding: 0.65rem 1.1rem; border: 1.5px solid var(--accent);
+    border-radius: 4px; text-decoration: none; font-weight: 600; font-size: 0.95rem;
+  }
+  .download:hover { background: var(--accent); color: var(--paper); }
+
+  @media (max-width: 52rem) {
+    .page { grid-template-columns: minmax(0, 1fr); gap: 2.5rem; padding-top: 2.5rem; }
+    aside { order: -1; display: grid; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); gap: 2rem; }
+  }
+  @media (max-width: 30rem) {
+    .timeline::before { left: 0.3rem; }
+    .role { grid-template-columns: minmax(0, 1fr); padding-left: 1.6rem; }
+    .role::before { left: -0.05rem; }
+    .years { text-align: left; margin-bottom: 0.2rem; }
+    .years span { display: inline; }
+    .years span + span::before { content: " – "; }
+    .role-body { padding-left: 0; }
+  }
+  @media print {
+    body { background: #fff; color: #000; font-size: 10.5pt; }
+    .page { padding: 0; gap: 1.5rem; }
+    .download { display: none; }
+    .role { break-inside: avoid; padding-bottom: 1.25rem; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <header>
+    <h1>Chialin Sham</h1>
+    <p class="tagline">Technical operations and client delivery specialist who builds pharma lead-generation programs from client assets, along with the back-end data transfers behind them.</p>
+    <ul class="contact">
+      <li><a href="mailto:chialinsham@gmail.com">chialinsham@gmail.com</a></li>
+      <li><a href="tel:+19736324130">973-632-4130</a></li>
+    </ul>
+  </header>
+
+  <main>
+    <h2>Experience</h2>
+    <ol class="timeline">
+      <li class="role current">
+        <div class="years"><span>2018</span><span>Present</span></div>
+        <div class="role-body">
+          <h3>Senior Manager, Analytics and Campaign</h3>
+          <p class="company">Sharecare</p>
+          <p class="group-label">Program delivery and data</p>
+          <ul>
+            <li>Serve as subject matter expert on lead generation programs, building campaigns and acting as primary point of contact for back-end data transfer setups</li>
+            <li>Build pharma lead generation programs that pass through client and agency medical-legal-regulatory (MLR) review, ensuring each program is implemented exactly to approved specifications before launch</li>
+            <li>Lead client calls to walk technical teams through Sharecare’s back-end datapass process and align on data transfers between Sharecare and client systems</li>
+            <li>Troubleshoot back-end data transfers during testing by querying BigQuery to confirm data arrived as expected</li>
+            <li>Monitor daily delivery across 100+ concurrent programs to keep each on pace to hit its allocated monthly goal</li>
+            <li>Optimize under-delivering programs by reallocating volume to those behind pace while protecting delivery on programs already on track</li>
+            <li>Write SQL queries in Google BigQuery to validate program delivery against the database as the source of truth, resolving discrepancies when reporting numbers don’t reconcile</li>
+            <li>Work closely with the engineering team to scope and prioritize new feature requests</li>
+          </ul>
+          <p class="group-label">Workflow automation</p>
+          <ul>
+            <li>Spearheaded the PDM team’s move from Jira to Notion, single-handedly building a connected Opportunities, Products, and Tasks workspace for day-to-day funnel program management</li>
+            <li>Built three Make.com automations (a Salesforce-to-Notion sync, a Notion-to-Salesforce write-back of Order Names and Program URLs, and Notion-to-Slack alerts), eliminating up to three rounds of manual data re-entry per program</li>
+            <li>Used Claude (AI) to design the Salesforce–Notion integration and write the Make.com automation scripts, taking the project from concept to production</li>
+            <li>Configured the Salesforce-to-Notion sync to log changes to flight dates, goals, and targeting and flag updated records for PDM review, surfacing errors before program setup instead of after launch</li>
+            <li>Closed the notification gap left by moving off Jira by routing new Notion tasks to Slack, so the Ops team sees every new task even when they aren’t tagged on it</li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="role">
+        <div class="years"><span>2016</span><span>2018</span></div>
+        <div class="role-body">
+          <h3>Technical Service Manager, Team Lead</h3>
+          <p class="company">Sharecare</p>
+          <ul>
+            <li>Managed project deliverables and schedules across client programs</li>
+            <li>Partnered with account managers, UX, and engineering teams to understand client needs and implement solutions</li>
+            <li>Reviewed client technical specifications prior to development</li>
+            <li>Set up and managed ad tags in Google Ad Manager</li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="role">
+        <div class="years"><span>2011</span><span>2016</span></div>
+        <div class="role-body">
+          <h3>Technical Service Manager</h3>
+          <p class="company">QualityHealth (acquired by Sharecare)</p>
+          <ul>
+            <li>Built and implemented client campaigns using HTML, CSS, and JavaScript</li>
+            <li>Gathered client requirements and ensured all deadlines were met</li>
+            <li>Performed QA testing of back-end processes</li>
+            <li>Modified validation rules using jQuery</li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="role">
+        <div class="years"><span>2010</span><span>2011</span></div>
+        <div class="role-body">
+          <h3>Consultant</h3>
+          <p class="company">Realware</p>
+          <ul>
+            <li>Partnered with clients to write specifications for new web applications</li>
+            <li>Managed the full project lifecycle, from requirements through launch</li>
+            <li>Performed QA testing on new features and enhancements and provided production support</li>
+            <li>Drafted statements of work and submitted them for client approval</li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="role">
+        <div class="years"><span>2007</span><span>2010</span></div>
+        <div class="role-body">
+          <h3>Project Manager</h3>
+          <p class="company">Marketing Technology Solutions (QualityHealth)</p>
+          <ul>
+            <li>Created custom JavaServer Pages (JSP) code to support special program setups for client projects</li>
+            <li>Initiated and implemented a new ETL system for the back-end data transmission process</li>
+            <li>Communicated and documented project status to business owners and team members</li>
+            <li>Delivered weekly status reports to ensure the timely launch of all programs</li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="role">
+        <div class="years"><span>2003</span><span>2006</span></div>
+        <div class="role-body">
+          <h3>Developer / Project Lead</h3>
+          <p class="company">Realware</p>
+          <ul>
+            <li>Worked with clients and developers to maintain existing web applications, including bug fixes, upgrades, and enhancements</li>
+            <li>Tested enhancements and bug fixes</li>
+            <li>Served as point of contact for client escalations and drove issues to resolution</li>
+            <li>Wrote SQL and Java queries to meet business requirements</li>
+            <li>Developed Java code to automate daily product status queries sent to clients</li>
+            <li>Wrote functional specifications for Visual Basic software upgrades and enhancements</li>
+          </ul>
+        </div>
+      </li>
+    </ol>
+  </main>
+
+  <aside>
+    <section class="panel">
+      <a class="download" href="resume.pdf" download>Download PDF</a>
+    </section>
+    <section class="panel">
+      <h2>Skills</h2>
+      <dl>
+        <dt>Databases</dt>
+        <dd>Google BigQuery, Oracle, MS SQL, PostgreSQL, MySQL</dd>
+        <dt>Tools</dt>
+        <dd>Salesforce, Notion, Jira, Make.com, Slack, Google Ad Manager</dd>
+        <dt>AI tools</dt>
+        <dd>Claude, ChatGPT, Gemini</dd>
+        <dt>Languages</dt>
+        <dd>HTML, CSS, JavaScript/jQuery, Java, C, AWK, Python, Ruby</dd>
+      </dl>
+    </section>
+    <section class="panel">
+      <h2>Education</h2>
+      <p>B.S., Computer Science</p>
+      <p class="sub">Rutgers University, New Brunswick, NJ</p>
+    </section>
+  </aside>
+</div>
+</body>
+</html>
